@@ -1,73 +1,92 @@
-
 # Analog Clock
 
-### This website is deployed [here.](https://tusharnankani.github.io/AnalogClock/)
+A beautiful analog clock web application with stopwatch, timer, and alarm functionality.
 
 
-## *Features*
+## Features
 
 ### Clock
-* Analog clock with smooth hand movements
-* Digital time display below the clock
-* Real-time updates every second
-* Neomorphic interface design
+- Analog clock with smooth hand movements
+- Digital time display below the clock
+- Real-time updates every second
+- Neomorphic interface design
 
 ### Stopwatch
-* Start, Stop, and Reset functionality
-* Lap recording with timestamps
-* Millisecond precision display (HH:MM:SS.mmm)
-* Scrollable lap history list
+- Start, Stop, and Reset functionality
+- Lap recording with timestamps
+- Millisecond precision display (HH:MM:SS.mmm)
+- Scrollable lap history list
+- Fixed-width monospace display (no layout shifting)
 
 ### Timer
-* Custom time input (hours, minutes, seconds)
-* Quick preset buttons (1 min, 5 min, 10 min, 30 min)
-* Pause and Resume functionality
-* Audio alert when timer completes
-* Visual flashing effect on completion
-* Cancel option to stop timer early
+- Custom time input (hours, minutes, seconds)
+- Quick preset buttons (1 min, 5 min, 10 min, 30 min)
+- Pause and Resume functionality
+- Audio alert when timer completes
+- Visual flashing effect on completion
+- Cancel option to stop timer early
 
 ### Alarm
-* Set alarms for any time (24-hour input, 12-hour AM/PM display)
-* Support for multiple active alarms
-* Delete individual alarms
-* Audio alert when alarm triggers
-* Automatic removal after alarm rings
+- Set alarms for any time (24-hour input, 12-hour AM/PM display)
+- Support for multiple active alarms
+- Delete individual alarms
+- Audio alert when alarm triggers
+- Looping sound with "Stop Sound" button
+- Automatic removal after alarm rings
 
 ### User Interface
-* Tab-based navigation (Clock, Stopwatch, Timer, Alarm)
-* Smooth fade-in animations when switching tabs
-* Dark Mode and Light Mode themes
-* Responsive design for mobile devices
-* Neomorphic design with subtle 3D shadows
+- Tab-based navigation (Clock, Stopwatch, Timer, Alarm)
+- Smooth fade-in animations when switching tabs
+- Dark Mode and Light Mode themes
+- Responsive design for mobile devices
+- Neomorphic design with subtle 3D shadows
+- Custom alarm sound support
 
 
-## *Features to be added*
-
-- Adding Timezones
-- Custom alarm sounds
-
-
-## *Technologies used*
+## Technologies Used
 
 - HTML5
-- CSS3 (with Flexbox)
-- Vanilla Javascript
+- CSS3 (Flexbox, Animations, Neomorphism)
+- Vanilla JavaScript
 
 
-## *References*
-* For Fonts: [Google Fonts](https://fonts.googleapis.com/css2?family=Work+Sans:wght@300&display=swap)
-* For Color Coordination: [w3schools](https://www.w3schools.com/colors/colors_mixer.asp?colorbottom=000000&colortop=FFFFFF)
-* For Date and Time function: [Date and Time JS](https://javascript.info/date#setting-date-components)
-* For Neomorphism: [Writing CSS for Neomorphism](https://www.youtube.com/watch?v=Gv0dy51SYL0)
-* Help for Neomorphism: [Neomorphism](https://neumorphism.io/)
-* More about Neomorphism: [CSS-tricks](https://css-tricks.com/neumorphism-and-css/)
+## How to Use
 
-## Website Demo:
-![1](https://user-images.githubusercontent.com/61280281/85862463-6e0a9a00-b7df-11ea-806e-2ebbeda2ab0c.png)
-![2](https://user-images.githubusercontent.com/61280281/85862468-6fd45d80-b7df-11ea-8142-435302297a22.png)
-![3](https://user-images.githubusercontent.com/61280281/85862470-706cf400-b7df-11ea-8e31-90f2f8ae4a2e.png)
+1. **Clock**: View the current time in analog and digital format
+2. **Stopwatch**: Click Start to begin, Lap to record times, Stop to pause, Reset to clear
+3. **Timer**: Set hours/minutes/seconds or use presets, then Start. Use Pause/Resume as needed
+4. **Alarm**: Enter hour (0-23) and minute (0-59), click Set Alarm. Click Delete to remove
 
 
-# *Author*
-* Tushar Nankani (tusharnankani, tusharnankani3@gmail.com)
-   - [LinkedIn](https://www.linkedin.com/in/tusharnankani)
+## Customization
+
+### Custom Alarm Sound
+Replace `CSS/little_krishna.mp3` with your own audio file and update the path in `index.html`:
+```html
+<audio id="alarm-sound" preload="auto" loop>
+    <source src="your-sound-file.mp3" type="audio/mpeg">
+</audio>
+```
+
+
+## File Structure
+
+```
+AnalogClock/
+├── index.html          # Main HTML file
+├── CSS/
+│   ├── main.css        # All styles
+│   └── little_krishna.mp3  # Alarm sound
+├── JS/
+│   └── main.js         # All JavaScript logic
+├── clock.png           # Clock face image
+├── favicon.png         # Browser icon
+└── README.md           # This file
+```
+
+
+## References
+
+- [Google Fonts](https://fonts.googleapis.com/css2?family=Work+Sans:wght@300&display=swap)
+- [Neomorphism Generator](https://neumorphism.io/)
+- [CSS-tricks Neomorphism Guide](https://css-tricks.com/neumorphism-and-css/)
