@@ -31,6 +31,24 @@ tabs.forEach(tab => {
 var alarms = [];
 var alarmIdCounter = 0;
 const alarmSound = document.querySelector('#alarm-sound');
+const stopSoundBtn = document.querySelector('#stop-sound');
+
+// Function to play sound and show stop button
+function playAlarmSound() {
+    alarmSound.currentTime = 0;
+    alarmSound.play();
+    stopSoundBtn.style.display = 'block';
+}
+
+// Function to stop sound and hide button
+function stopAlarmSound() {
+    alarmSound.pause();
+    alarmSound.currentTime = 0;
+    stopSoundBtn.style.display = 'none';
+}
+
+// Stop sound button click handler
+stopSoundBtn.addEventListener('click', stopAlarmSound);
 
 const alarmHoursInput = document.querySelector('#alarm-hours');
 const alarmMinutesInput = document.querySelector('#alarm-minutes');
@@ -104,16 +122,11 @@ function checkAlarms(currentTime) {
             alarm.triggered = true;
 
             // Play alarm sound
-            alarmSound.currentTime = 0;
-            alarmSound.play();
+            playAlarmSound();
 
-            // Show notification
-            setTimeout(() => {
-                alert(`Alarm! It's ${formatAlarmTime(alarm.hours, alarm.minutes)}`);
-                // Remove triggered alarm
-                alarms = alarms.filter(a => a.id !== alarm.id);
-                renderAlarms();
-            }, 100);
+            // Remove triggered alarm
+            alarms = alarms.filter(a => a.id !== alarm.id);
+            renderAlarms();
         }
     });
 
@@ -291,8 +304,7 @@ function timerComplete() {
     timerRunning = false;
 
     // Play alarm sound
-    alarmSound.currentTime = 0;
-    alarmSound.play();
+    playAlarmSound();
 
     // Flash the display
     timerDisplayDiv.classList.add('timer-complete');
@@ -300,7 +312,6 @@ function timerComplete() {
     setTimeout(() => {
         timerDisplayDiv.classList.remove('timer-complete');
         resetTimerUI();
-        alert('Timer Complete!');
     }, 3000);
 }
 
